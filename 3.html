@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则</title>
+</head>
+<body>
+	
+<script>
+	
+	function mn(str){
+		var num = 0;
+		for(var i = 0; i < str.length; i++){
+			if(/[\u4e00-\u9fa5]/.test(str[i])){
+				num = num + 2;
+			}else{
+				num++;
+			}
+		}
+		return num;
+	}
+
+	var str = '你好 hi';
+	console.log(mn(str));
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>去重</title>
+</head>
+<body>
+	
+<script>
+	Array.prototype.qc = function(){
+		var json = {};
+		var arr = [];
+		for(var i = 0; i < this.length; i++){
+			var mm = this[i];
+			if(!json[typeof mm + mm]){
+				arr.push(mm);
+				json[typeof mm + mm] = 1;
+			}
+		}
+		return arr;
+	}
+	var arr = [1,3,2,1,5,3,'1'];
+	console.log(arr.qc())
+</script>
+</body>
+</html>
