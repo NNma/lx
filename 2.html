@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<script>
+	var str = 'aaadddsssaacs';
+	var json = {};
+	var key = '';
+	var value = -Infinity;
+
+	for(var i = 0; i < str.length; i++){
+		var a = str.charAt(i);
+		if(!json[a]){
+			json[a] = 1;
+		}else{
+			json[a]++;
+		}
+	}
+	console.log(json);
+
+	for(var attr in json){
+		if(value < json[attr]){
+			value = json[attr];
+			key = attr;
+		}
+	}
+	console.log('出现最多的是'+key+'出现了'+value+'次');
+</script>
+</body>
+</html>
